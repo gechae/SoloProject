@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- bootstrap 는 반은형 Web 을 지원 -->
+    <div class="row">
+        <!-- 12 그리드 시스템 제공 :: 하나의 행을 12개의 컬럼으로 나눈다는 의미 -->
+        <!-- 
+            md : middle
+            sm : small
+        -->
+        <div class="col-lg-3 col-md-4 col-sm-6" style="background-color: red;">
+            <!-- 3 만큼 사용해라라는의미로 그것보다 작으면 원래 DIV 속성으로 돌아가라 -->
+            <!-- 각각의 의미는 라지일때 3컬럼사용, 미디움일때 4개 컬럼 사용 스몰일때 6개 컬럼 사용-->
+            A
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6" style="background-color: yellow;">
+            <!-- 2 만큼 사용해라, sm에 설정된 픽셀보다 작아지면 DIV 속성으로 돌아가라 -->
+            B
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-12" style="background-color: blue;">
+            <!-- 5만큼 사용해라 -->
+            C
+        </div>
+    </div>
+</body>
+</html>
