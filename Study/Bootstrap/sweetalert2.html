@@ -18,9 +18,10 @@
 <body>
     <button type="button" class="btn btn-primary" onclick="swal1()">Try me!</button>
     <button type="button" class="btn btn-primary" onclick="swal2()">Try me!</button>
+    <button type="button" class="btn btn-primary" onclick="swal3()">Try me!</button>
     
     <script>
-        function swall() {
+        function swal1() {
             Swal.fire(
                 'The Internet?', // title
                 'That thing is still arount?', // text
@@ -28,19 +29,54 @@
             )
         }
 
-        function swal2() {
+        function swal2() { // default
             Swal.fire({
                 title: 'Are you sure to delete',
                 text: "You won't be able to revert this!",
                 icon: 'warning',
-                showCancelButton: true,
-                confirmButtonText: 'Yes, delete it!',
+                showCancelButton: true, // true로 하면 can칟 버튼이 보여진다.
+                // confirmButtonText: 'Yes, delete it!',
+                // cancelButtonText: 'No, cancel!',
+                // reverseButtons: true, // 버튼위치가 변경
+                showLoaderOnConfirm: true, // 결과를 받을때 까지 프로세스바 표시
+                preConfirm: () => { 
+                    //프로그램 구현 부분 (showLoaderOnConfirm)
+                    //return true or return value
+                },
+                allowOutsideClick: () => !Swal.isLoading() // 바깥창을 클릭하는걸 허옹하겠냐? 로딩이 안끝났다면 허용을 안하겠다.
+            }).then((result) => {
+                if (result.isConfirmed) { // Handling
+                    // result.value
+                    Swal.fire(
+                        'The data has been deleted.',
+                        '',
+                        'success'
+                    )
+                }
+            })
+        }
+        function swal3() { // Custom
+            Swal.fire({
+                title: 'Are you sure to delete',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true, //
+                confirmButtonText: 'Yes, delete it!', // 
                 cancelButtonText: 'No, cancel!',
                 reverseButtons: true,
                 showLoaderOnConfirm: true,
                 preConfirm: () => {
                     //프로그램 구현
                     //return true or return value
+                }
+            }).then((result) => {
+                if (result.isConfirmed) { // Handling
+                    // result.value
+                    Swal.fire(
+                        'The data has been deleted.',
+                        '',
+                        'success'
+                    )
                 }
             })
         }
